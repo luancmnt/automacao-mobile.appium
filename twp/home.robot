@@ -10,5 +10,8 @@ Deve abrir a tela principal
     ...                     deviceName=Emulator
     ...                     app=${EXECDIR}/app/twp.apk
     
-    Wait Until Page Contains    Training Wheels Protocol Mobile Version    5
+    ${element}=     Set Variable        id=io.qaninja.android.twp:id/mi_description
+
+    Wait Until Element Is Visible       ${element}
+    Element Text Should Be              ${element}          Training Wheels Protocol \n Mobile Version
     Close Application
